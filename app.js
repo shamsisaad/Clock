@@ -12,12 +12,16 @@ setInterval(function() {
    hoursElem.innerText = date.getHours();
    minutesElem.innerText = date.getMinutes();
    secondsElem.innerText = date.getSeconds();
+
+   if(hours > 11){
+    amPm.innerText ="PM";
+    if (hours > 12) {
+      hours -=12;
+    }
+  } else {amPm.innerText = "AM";
+  }  
+   
   }, 1000);
 
-  if(hours > 12){
-    amPm.innerText ="PM";
-}else {amPm.innerText = "AM";
-}    
-if (hours > 12) {
-hoursElem.innerText -= 12;
-}
+  
+
